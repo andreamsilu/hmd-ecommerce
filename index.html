@@ -30,33 +30,56 @@
     .slideshow-container {
       position: relative;
       width: 100%;
-      max-width: 600px;
+     max-height: 100vh;
       margin: 20px auto;
+      overflow: hidden;
     }
     .slideshow-container img {
       width: 100%;
+      display: none;
       border-radius: 8px;
+    }
+    .slideshow-container img.active {
+      display: block;
     }
     h1, h2 {
       text-align: center;
     }
-    .offers, .health-benefits {
-      margin: 20px auto;
-      width: 90%;
-      max-width: 800px;
-    }
-    .offer-item, .benefit-item {
+    .offers {
       display: flex;
-      align-items: center;
-      margin-bottom: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
     }
-    .offer-item img, .benefit-item img {
-      max-width: 200px;
-      margin-right: 20px;
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
       border-radius: 8px;
+      width: 300px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
     }
-    p {
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+    .card-content {
+      padding: 15px;
+    }
+    .card-content h3 {
+      margin: 10px 0;
+      font-size: 20px;
+    }
+    .card-content p {
       font-size: 16px;
+      color: #666;
+    }
+    .price {
+      color: #333;
+      font-weight: bold;
+      margin-top: 10px;
     }
     /* Pop-up Modal */
     .popup {
@@ -109,34 +132,40 @@
 
     <!-- Slideshow -->
     <div class="slideshow-container">
-      <img src="images/slide1.png" alt="Ergonomic Standing Desk">
+      <img src="images/slide1.png" alt="Ergonomic Standing Desk" class="active">
       <img src="images/slide2.png" alt="Adjustable Desk">
       <img src="images/slide3.png" alt="Modern Office Desk">
     </div>
 
-    <!-- Special Offers Section -->
-    <section class="offers">
-      <h2>Special Offers</h2>
-      <div class="offer-item">
-        <img src="images/offer1.png" alt="Offer 1">
-        <p><strong>Basic Standing Desk:</strong> Affordable and ergonomic desk ideal for home offices. <em>Price: $199</em></p>
-      </div>
-      <div class="offer-item">
-        <img src="images/offer2.png" alt="Offer 2">
-        <p><strong>Premium Adjustable Desk:</strong> Fully automated desk with height adjustment. <em>Price: $399</em></p>
-      </div>
-    </section>
+    <!-- Special Offers Section using Cards -->
+    <h2>Special Offers</h2>
 
-    <!-- Health Benefits Section -->
-    <section class="health-benefits">
-      <h2>Health Benefits of Standing Desks</h2>
-      <div class="benefit-item">
-        <img src="images/health1.png" alt="Benefit 1">
-        <p>Standing desks help reduce back pain and improve posture.</p>
+    <section class="offers">
+      
+      <div class="card">
+        <img src="images/slide1.png" alt="Basic Standing Desk">
+        <div class="card-content">
+          <h3>Basic Standing Desk</h3>
+          <p>Affordable and ergonomic desk ideal for home offices.</p>
+          <div class="price">Price: $199</div>
+        </div>
       </div>
-      <div class="benefit-item">
-        <img src="images/health2.png" alt="Benefit 2">
-        <p>They promote a more active and healthier lifestyle during work hours.</p>
+      <div class="card">
+        <img src="images/slide1.png" alt="Basic Standing Desk">
+        <div class="card-content">
+          <h3>Basic Standing Desk</h3>
+          <p>Affordable and ergonomic desk ideal for home offices.</p>
+          <div class="price">Price: $199</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/slide2.png" alt="Premium Adjustable Desk">
+        <div class="card-content">
+          <h3>Premium Adjustable Desk</h3>
+          <p>Fully automated desk with height adjustment.</p>
+          <div class="price">Price: $399</div>
+        </div>
       </div>
     </section>
   </main>
@@ -156,11 +185,23 @@
     window.onload = function() {
       document.getElementById('welcomePopup').style.visibility = 'visible';
       document.getElementById('welcomePopup').style.opacity = '1';
+      startSlideshow();
     }
 
     function closePopup() {
       document.getElementById('welcomePopup').style.visibility = 'hidden';
       document.getElementById('welcomePopup').style.opacity = '0';
+    }
+
+    // Slideshow functionality
+    let slideIndex = 0;
+    function startSlideshow() {
+      const slides = document.querySelectorAll('.slideshow-container img');
+      setInterval(() => {
+        slides[slideIndex].classList.remove('active');
+        slideIndex = (slideIndex + 1) % slides.length;
+        slides[slideIndex].classList.add('active');
+      }, 3000); // Change slide every 3 seconds
     }
   </script>
 </body>
