@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Standing Desks Ltd</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
   <style>
     /* Inline Basic CSS for Key Styling */
     body {
@@ -25,13 +26,12 @@
       margin: 0 15px;
     }
     nav a:hover {
-      text-decoration: none;
-      background-color: cornflowerblue;
+      text-decoration: underline;
     }
     .slideshow-container {
       position: relative;
       width: 100%;
-      max-height: 90vh;
+      max-height: 100vh;
       margin: 20px auto;
       overflow: hidden;
     }
@@ -91,6 +91,46 @@
       font-weight: bold;
       margin-top: 10px;
     }
+    /* Health Benefits Section */
+    .health-benefits {
+      background-color: #fff;
+      padding: 30px 10px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .benefit {
+      display: inline-block;
+      margin: 20px;
+      text-align: center;
+      width: 150px;
+    }
+    .benefit i {
+      font-size: 3rem;
+      color: #28a745;
+      margin-bottom: 10px;
+    }
+    .benefit h3 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .benefit p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+    }
+    footer a {
+      color: #28a745;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -115,7 +155,7 @@
       <img src="images/slide3.png" alt="Modern Office Desk">
     </div>
 
-    <!-- Special Offers Section using Cards -->
+    <!-- Special Offers Section -->
     <h2>Special Offers</h2>
     <section class="offers">
       <div class="card">
@@ -143,6 +183,45 @@
         </div>
       </div>
     </section>
+
+    <!-- Health Benefits Section -->
+    <section class="health-benefits">
+      <h2>Health Benefits</h2>
+      <div class="benefit">
+        <i class="fas fa-walking"></i>
+        <h3>Improves Posture</h3>
+        <p>Standing desks encourage better spine alignment.</p>
+      </div>
+      <div class="benefit">
+        <i class="fas fa-heartbeat"></i>
+        <h3>Heart Health</h3>
+        <p>Reduces risk of cardiovascular disease.</p>
+      </div>
+      <div class="benefit">
+        <i class="fas fa-burn"></i>
+        <h3>Burn Calories</h3>
+        <p>Helps burn more calories compared to sitting.</p>
+      </div>
+      <div class="benefit">
+        <i class="fas fa-brain"></i>
+        <h3>Boosts Focus</h3>
+        <p>Increases concentration and energy levels.</p>
+      </div>
+    </section>
+     <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Standing Desks Ltd | All Rights Reserved</p>
+    <p>
+      <a href="terms.html">Terms of Service</a> | 
+      <a href="privacy.html">Privacy Policy</a> | 
+      <a href="contact.html">Contact Us</a>
+    </p>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Go to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
   </main>
 
   <!-- JavaScript -->
