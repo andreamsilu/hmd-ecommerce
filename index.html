@@ -3,10 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Home | Standing Desks Ltd</title>
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Inline Basic CSS for Key Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    .slideshow-container img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .offers, .health-benefits {
+      margin: 20px auto;
+      width: 90%;
+      max-width: 800px;
+    }
+    .offer-item, .benefit-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .offer-item img, .benefit-item img {
+      max-width: 200px;
+      margin-right: 20px;
+      border-radius: 8px;
+    }
+    p {
+      font-size: 16px;
+    }
+    /* Pop-up Modal */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s;
+    }
+    .popup-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .popup-content button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
+  <!-- Navigation -->
   <header>
     <nav>
       <a href="index.html">Home</a>
@@ -17,13 +102,66 @@
     </nav>
   </header>
 
-  <div class="slideshow-container">
-    <img src="images/slide1.png" alt="Slide 1">
-    <img src="images/slide2.png" alt="Slide 2">
-    <img src="images/slide3.png" alt="Slide 2">
+  <!-- Page Content -->
+  <main>
+    <h1>Welcome to Standing Desks Ltd</h1>
+    <p style="text-align:center;">Explore our range of rising desks and discover their health benefits.</p>
 
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+      <img src="images/slide1.png" alt="Ergonomic Standing Desk">
+      <img src="images/slide2.png" alt="Adjustable Desk">
+      <img src="images/slide3.png" alt="Modern Office Desk">
+    </div>
+
+    <!-- Special Offers Section -->
+    <section class="offers">
+      <h2>Special Offers</h2>
+      <div class="offer-item">
+        <img src="images/offer1.png" alt="Offer 1">
+        <p><strong>Basic Standing Desk:</strong> Affordable and ergonomic desk ideal for home offices. <em>Price: $199</em></p>
+      </div>
+      <div class="offer-item">
+        <img src="images/offer2.png" alt="Offer 2">
+        <p><strong>Premium Adjustable Desk:</strong> Fully automated desk with height adjustment. <em>Price: $399</em></p>
+      </div>
+    </section>
+
+    <!-- Health Benefits Section -->
+    <section class="health-benefits">
+      <h2>Health Benefits of Standing Desks</h2>
+      <div class="benefit-item">
+        <img src="images/health1.png" alt="Benefit 1">
+        <p>Standing desks help reduce back pain and improve posture.</p>
+      </div>
+      <div class="benefit-item">
+        <img src="images/health2.png" alt="Benefit 2">
+        <p>They promote a more active and healthier lifestyle during work hours.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pop-up Window -->
+  <div class="popup" id="welcomePopup">
+    <div class="popup-content">
+      <h2>Welcome to Standing Desks Ltd!</h2>
+      <p>Discover the best rising desks and take a step towards a healthier lifestyle.</p>
+      <button onclick="closePopup()">Close</button>
+    </div>
   </div>
 
-  <script src="js/scripts.js"></script>
+  <!-- JavaScript -->
+  <script>
+    // Pop-up functionality
+    window.onload = function() {
+      document.getElementById('welcomePopup').style.visibility = 'visible';
+      document.getElementById('welcomePopup').style.opacity = '1';
+    }
+
+    function closePopup() {
+      document.getElementById('welcomePopup').style.visibility = 'hidden';
+      document.getElementById('welcomePopup').style.opacity = '0';
+    }
+  </script>
 </body>
 </html>
