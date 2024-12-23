@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Standing Desks Ltd</title>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-KfkfwQ4C+1QEl0u7rUny6Xop8EtAtp6mTP4OxE4E9HD9EJp9L5X4AaxG8+lUpKP+lP13gr5Kt51hFi2d06wtoA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <style>
-    /* Inline Basic CSS for Key Styling */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -61,12 +59,12 @@
     h2 {
       text-align: center;
     }
+    .offers-container {
+      padding: 20px;
+    }
     .offers {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       gap: 20px;
-      padding: 20px;
     }
     .card {
       background-color: #fff;
@@ -93,33 +91,6 @@
       font-weight: bold;
       margin-top: 10px;
     }
-    /* Health Benefits Section */
-    .health-benefits {
-      background-color: #fff;
-      padding: 30px 10px;
-      margin: 20px auto;
-      text-align: center;
-    }
-    .benefit {
-      display: inline-block;
-      margin: 20px;
-      text-align: center;
-      width: 150px;
-    }
-    .benefit i {
-      font-size: 3rem;
-      color: #28a745;
-      margin-bottom: 10px;
-    }
-    .benefit h3 {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-    .benefit p {
-      font-size: 14px;
-      color: #555;
-    }
-
     footer {
       background-color: #333;
       color: #fff;
@@ -136,7 +107,6 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <header>
     <nav>
       <a href="index.html">Home</a>
@@ -146,97 +116,60 @@
       <a href="basket.html">Basket</a>
     </nav>
   </header>
-
-  <!-- Page Content -->
   <main>
-    <!-- Slideshow -->
     <div class="slideshow-container">
-      <img src="images/slide1.png" alt="Ergonomic Standing Desk" class="active">
+      <img src="images/desk1.jpg" alt="Ergonomic Standing Desk" class="active">
       <div class="slide-text">Welcome to Standing Desks Ltd</div>
-      <img src="images/slide2.png" alt="Adjustable Desk">
-      <img src="images/slide3.png" alt="Modern Office Desk">
+      <img src="images/desk2.jpg" alt="Adjustable Desk">
+      <img src="images/desk3.jpg" alt="Modern Office Desk">
     </div>
-
-    <!-- Special Offers Section -->
     <h2>Special Offers</h2>
-    <section class="offers">
-      <div class="card">
-        <img src="images/slide1.png" alt="Basic Standing Desk">
-        <div class="card-content">
-          <h3>Basic Standing Desk</h3>
-          <p>Affordable and ergonomic desk ideal for home offices.</p>
-          <div class="price">Price: $199</div>
+    <section class="offers-container">
+      <div class="offers">
+        <div class="card">
+          <img src="images/desk4.jpg" alt="Basic Standing Desk">
+          <div class="card-content">
+            <h3>Basic Standing Desk</h3>
+            <p>Affordable and ergonomic desk ideal for home offices.</p>
+            <div class="price">Price: $199</div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="images/slide2.png" alt="Premium Adjustable Desk">
-        <div class="card-content">
-          <h3>Premium Adjustable Desk</h3>
-          <p>Fully automated desk with height adjustment.</p>
-          <div class="price">Price: $399</div>
+        <div class="card">
+          <img src="images/desk1.jpg" alt="Premium Adjustable Desk">
+          <div class="card-content">
+            <h3>Premium Adjustable Desk</h3>
+            <p>Fully automated desk with height adjustment.</p>
+            <div class="price">Price: $399</div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="images/slide2.png" alt="Premium Adjustable Desk">
-        <div class="card-content">
-          <h3>Premium Adjustable Desk</h3>
-          <p>Fully automated desk with height adjustment.</p>
-          <div class="price">Price: $399</div>
+        <div class="card">
+          <img src="images/desk3.jpg" alt="Premium Adjustable Desk">
+          <div class="card-content">
+            <h3>Premium Adjustable Desk</h3>
+            <p>Fully automated desk with height adjustment.</p>
+            <div class="price">Price: $399</div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="images/slide2.png" alt="Premium Adjustable Desk">
-        <div class="card-content">
-          <h3>Premium Adjustable Desk</h3>
-          <p>Fully automated desk with height adjustment.</p>
-          <div class="price">Price: $399</div>
+        <div class="card">
+          <img src="images/desk2.jpg" alt="Premium Adjustable Desk">
+          <div class="card-content">
+            <h3>Premium Adjustable Desk</h3>
+            <p>Fully automated desk with height adjustment.</p>
+            <div class="price">Price: $399</div>
+          </div>
         </div>
       </div>
     </section>
-
-    <!-- Health Benefits Section -->
-    <section class="health-benefits">
-      <h2>Health Benefits</h2>
-      <div class="benefit">
-        <i class="fas fa-walking"></i>
-        <h3>Improves Posture</h3>
-        <p>Standing desks encourage better spine alignment.</p>
-      </div>
-      <div class="benefit">
-        <i class="fas fa-heartbeat"></i>
-        <h3>Heart Health</h3>
-        <p>Reduces risk of cardiovascular disease.</p>
-      </div>
-      <div class="benefit">
-        <i class="fas fa-burn"></i>
-        <h3>Burn Calories</h3>
-        <p>Helps burn more calories compared to sitting.</p>
-      </div>
-      <div class="benefit">
-        <i class="fas fa-brain"></i>
-        <h3>Boosts Focus</h3>
-        <p>Increases concentration and energy levels.</p>
-      </div>
-    </section>
-     <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Standing Desks Ltd | All Rights Reserved</p>
-    <p>
-      <a href="terms.html">Terms of Service</a> | 
-      <a href="privacy.html">Privacy Policy</a> | 
-      <a href="contact.html">Contact Us</a>
-    </p>
-  </footer>
-
-  <!-- Back to Top Button -->
-  <button id="backToTop" title="Go to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
+    <footer>
+      <p>&copy; 2024 Standing Desks Ltd | All Rights Reserved</p>
+      <p>
+        <a href="terms.html">Terms of Service</a> | 
+        <a href="privacy.html">Privacy Policy</a> | 
+        <a href="contact.html">Contact Us</a>
+      </p>
+    </footer>
   </main>
-
-  <!-- JavaScript -->
   <script>
-    // Slideshow functionality
     let slideIndex = 0;
     function startSlideshow() {
       const slides = document.querySelectorAll('.slideshow-container img');
@@ -244,7 +177,7 @@
         slides[slideIndex].classList.remove('active');
         slideIndex = (slideIndex + 1) % slides.length;
         slides[slideIndex].classList.add('active');
-      }, 3000); // Change slide every 3 seconds
+      }, 3000);
     }
     window.onload = startSlideshow;
   </script>
