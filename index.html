@@ -91,27 +91,6 @@
       font-weight: bold;
       margin-top: 10px;
     }
-    .health-benefits {
-      background-color: #f9f9f9;
-      padding: 20px;
-      margin: 20px 0;
-    }
-    .health-benefits h2 {
-      margin-bottom: 20px;
-    }
-    .benefit {
-      text-align: center;
-      margin: 15px 0;
-    }
-    .benefit i {
-      font-size: 40px;
-      color: #28a745;
-      margin-bottom: 10px;
-    }
-    .benefit h3 {
-      font-size: 18px;
-      margin: 10px 0;
-    }
     footer {
       background-color: #333;
       color: #fff;
@@ -152,7 +131,7 @@
           <div class="card-content">
             <h3>Basic Standing Desk</h3>
             <p>Affordable and ergonomic desk ideal for home offices.</p>
-            <div class="price">Price: $199</div>
+            <div class="price">Price: Tsh 19999</div>
           </div>
         </div>
         <div class="card">
@@ -160,35 +139,105 @@
           <div class="card-content">
             <h3>Premium Adjustable Desk</h3>
             <p>Fully automated desk with height adjustment.</p>
-            <div class="price">Price: $399</div>
+            <div class="price">Price: Tsh 39999</div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/desk3.jpg" alt="Premium Adjustable Desk">
+          <div class="card-content">
+            <h3>Premium Adjustable Desk</h3>
+            <p>Fully automated desk with height adjustment.</p>
+            <div class="price">Price: Tsh 49999</div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/desk2.jpg" alt="Premium Adjustable Desk">
+          <div class="card-content">
+            <h3>Premium Adjustable Desk</h3>
+            <p>Fully automated desk with height adjustment.</p>
+            <div class="price">Price: Tsh 59999</div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Health Benefits Section -->
     <section class="health-benefits">
       <h2>Health Benefits</h2>
-      <div class="benefit">
-        <i class="fas fa-walking"></i>
-        <h3>Improves Posture</h3>
+      
+      <div class="benefit-card">
+        <div class="icon">
+          <i class="fas fa-walking"></i>
+        </div>
+        <h4>Improve Posture</h4>
         <p>Standing desks encourage better spine alignment.</p>
       </div>
-      <div class="benefit">
-        <i class="fas fa-heartbeat"></i>
+    
+      <div class="benefit-card">
+        <div class="icon">
+          <i class="fas fa-heartbeat"></i>
+        </div>
         <h3>Heart Health</h3>
         <p>Reduces risk of cardiovascular disease.</p>
       </div>
-      <div class="benefit">
-        <i class="fas fa-burn"></i>
+    
+      <div class="benefit-card">
+        <div class="icon">
+          <i class="fas fa-burn"></i>
+        </div>
         <h3>Burn Calories</h3>
         <p>Helps burn more calories compared to sitting.</p>
       </div>
-      <div class="benefit">
-        <i class="fas fa-brain"></i>
+    
+      <div class="benefit-card">
+        <div class="icon">
+          <i class="bi bi-brain"></i>
+        </div>
         <h3>Boosts Focus</h3>
         <p>Increases concentration and energy levels.</p>
       </div>
     </section>
+    
+    <!-- CSS -->
+    <style>
+      .health-benefits {
+        text-align: center;
+        margin-top: 30px;
+      }
+    
+      .benefit-card {
+        display: inline-block;
+        width: 200px;
+        margin: 20px;
+        padding: 20px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+    
+      .benefit-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+    
+      .benefit-card .icon {
+        font-size: 50px;
+        color: #4CAF50;
+        margin-bottom: 15px;
+      }
+    
+      .benefit-card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+    
+      .benefit-card p {
+        font-size: 14px;
+        color: #555;
+      }
+    </style>
+    
+    
     <footer>
       <p>&copy; 2024 Standing Desks Ltd | All Rights Reserved</p>
       <p>
