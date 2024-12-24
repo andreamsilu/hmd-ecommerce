@@ -4,7 +4,127 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rising Desks</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .search-bar {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .search-bar input {
+      width: 70%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .search-bar button {
+      padding: 10px 15px;
+      font-size: 16px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      background-color: #555;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product-item {
+      background-color: white;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .product-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .product-item span {
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .product-item .price {
+      color: green;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .add-to-basket {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .add-to-basket:hover {
+      background-color: #555;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -19,22 +139,62 @@
 
   <main>
     <h1>Explore Our Rising Desks</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for a product...">
+      <button>Search</button>
+    </div>
     <div class="product-list">
-      <div class="product-item" data-price="250">
+      <div class="product-item">
+        <img src="images/chair1.jpg" alt="Standing Desk Model A">
         <span>Standing Desk Model A</span>
+        <div class="price">Tsh 250</div>
         <button class="add-to-basket">Add to Basket</button>
       </div>
-      <div class="product-item" data-price="300">
+      <div class="product-item">
+        <img src="images/chair2.jpg" alt="Standing Desk Model B">
         <span>Standing Desk Model B</span>
+        <div class="price">Tsh 300</div>
         <button class="add-to-basket">Add to Basket</button>
       </div>
-      <div class="product-item" data-price="150">
+      <div class="product-item">
+        <img src="images/chair3.jpg" alt="Ergonomic Chair">
         <span>Ergonomic Chair</span>
+        <div class="price">Tsh 150</div>
+        <button class="add-to-basket">Add to Basket</button>
+      </div>
+      <div class="product-item">
+        <img src="images/chair4.jpg" alt="Standing Desk Model C">
+        <span>Standing Desk Model C</span>
+        <div class="price">Tsh 280</div>
+        <button class="add-to-basket">Add to Basket</button>
+      </div>
+    </div>
+    <div class="product-list">
+      <div class="product-item">
+        <img src="images/chair5.jpg" alt="Standing Desk Model A">
+        <span>Standing Desk Model A</span>
+        <div class="price">Tsh 250</div>
+        <button class="add-to-basket">Add to Basket</button>
+      </div>
+      <div class="product-item">
+        <img src="images/chair6.jpg" alt="Standing Desk Model B">
+        <span>Standing Desk Model B</span>
+        <div class="price">Tsh 300</div>
+        <button class="add-to-basket">Add to Basket</button>
+      </div>
+      <div class="product-item">
+        <img src="images/chair7.jpg" alt="Ergonomic Chair">
+        <span>Ergonomic Chair</span>
+        <div class="price">Tsh 150</div>
+        <button class="add-to-basket">Add to Basket</button>
+      </div>
+      <div class="product-item">
+        <img src="images/chair8.jpg" alt="Standing Desk Model C">
+        <span>Standing Desk Model C</span>
+        <div class="price">Tsh 280</div>
         <button class="add-to-basket">Add to Basket</button>
       </div>
     </div>
   </main>
-
-  <script src="js/scripts.js"></script>
 </body>
 </html>
