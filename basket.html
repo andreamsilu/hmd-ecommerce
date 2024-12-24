@@ -4,9 +4,179 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Basket</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .basket {
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    .basket-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+    }
+
+    .basket-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .basket-item img {
+      width: 50px; /* Adjust the size of the image */
+      height: 50px; /* Adjust the size of the image */
+      object-fit: cover; /* Ensure the image maintains aspect ratio */
+      margin-right: 10px; /* Space between image and text */
+    }
+
+    .checkout-section {
+      text-align: center;
+    }
+
+    button {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 50%;
+    }
+
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      float: right;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    #orderSummary {
+      list-style: none;
+      padding: 0;
+    }
+
+    .total-price {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 80%; /* Reduced width */
+      margin: 0 auto;
+    }
+
+    label {
+      font-size: 16px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    input[type="text"], input[type="email"], input[type="phone"] {
+      width: 100%; /* Ensure these inputs are full width */
+    }
+
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    button[type="submit"] {
+      background-color: #28a745;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #218838;
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <nav>
       <a href="index.html">Home</a>
@@ -20,8 +190,8 @@
   <main>
     <h1>Your Basket</h1>
     <div class="basket">
-      <ul class="basket-list"></ul>
-      <p>Total: $<span id="basketTotal">0.00</span></p>
+      <ul class="basket-list" id="basketList"></ul>
+      <p>Total: Tsh <span id="basketTotal">0</span></p>
       <div class="checkout-section">
         <button id="checkoutButton">Checkout</button>
       </div>
@@ -30,28 +200,88 @@
     <!-- Checkout Modal -->
     <div id="checkoutModal" class="modal">
       <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close" id="closeModal">&times;</span>
         <h2>Checkout</h2>
         <form id="checkoutForm">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required>
 
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
+          <label for="phone">Phone:</label>
+          <input type="phone" id="phone" name="phone" required>
 
           <label for="address">Address:</label>
           <textarea id="address" name="address" required></textarea>
 
           <h3>Order Summary</h3>
           <ul id="orderSummary"></ul>
-          <p>Total: $<span id="finalTotal">0.00</span></p>
+          <p>Total: Tsh <span id="finalTotal">0</span></p>
 
           <button type="submit">Place Order</button>
         </form>
       </div>
     </div>
   </main>
+  <script>
+    // Example product data with images
+    const basketItems = [
+      { name: 'chair 1', price: 20000, image: 'images/chair1.jpg' },
+      { name: 'chair 2', price: 30000, image: 'images/chair2.jpg' },
+      { name: 'chair 3', price: 15000, image: 'images/chair3.jpg' },
+    ];
 
-  <script src="js/scripts.js"></script>
+    // Function to update the basket total
+    function updateBasketTotal() {
+      const basketTotal = basketItems.reduce((total, item) => total + item.price, 0);
+      document.getElementById('basketTotal').textContent = basketTotal.toLocaleString();
+    }
+
+    // Function to display basket items
+    function displayBasketItems() {
+      const basketList = document.getElementById('basketList');
+      basketList.innerHTML = '';  // Clear existing items
+
+      basketItems.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.classList.add('basket-item');
+        listItem.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <span>${item.name}</span>
+          <span>Tsh ${item.price.toLocaleString()}</span>
+        `;
+        basketList.appendChild(listItem);
+      });
+    }
+
+    // Function to open the checkout modal
+    function openCheckoutModal() {
+      const checkoutModal = document.getElementById('checkoutModal');
+      const orderSummary = document.getElementById('orderSummary');
+      orderSummary.innerHTML = ''; // Clear existing summary
+
+      basketItems.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `${item.name} - Tsh ${item.price.toLocaleString()}`;
+        orderSummary.appendChild(listItem);
+      });
+
+      const finalTotal = basketItems.reduce((total, item) => total + item.price, 0);
+      document.getElementById('finalTotal').textContent = finalTotal.toLocaleString();
+
+      checkoutModal.style.display = 'block';
+    }
+
+    // Close the checkout modal
+    document.getElementById('closeModal').onclick = function() {
+      document.getElementById('checkoutModal').style.display = 'none';
+    }
+
+    // Checkout button click
+    document.getElementById('checkoutButton').addEventListener('click', openCheckoutModal);
+
+    // Initial render
+    displayBasketItems();
+    updateBasketTotal();
+  </script>
+
 </body>
 </html>
