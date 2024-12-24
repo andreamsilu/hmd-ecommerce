@@ -3,8 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Health Benefits</title>
+  <title>Health Benefits of Rising Desks</title>
   <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 60px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .health-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+    }
+
+    .benefit-card {
+
+      margin-left: 10%;
+      margin-bottom: 5%;
+      width: 80%;
+      height: 70%px;
+      display: flex;
+      background-color: white;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .benefit-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .benefit-card > div {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .benefit-image {
+      background-color: #f9f9f9;
+    }
+
+    .benefit-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .benefit-content p {
+      font-size: 28px;
+      color: #555;
+      text-align: center;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+    }
+    footer a {
+      color: #28a745;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  </style>
 </head>
 <body>
   <header>
@@ -18,8 +126,58 @@
   </header>
 
   <main>
-    <h1>Health Benefits of Standing Desks</h1>
-    <p>Standing desks can improve posture, reduce back pain, and enhance productivity. Explore our range of ergonomic standing desks to start living healthier today!</p>
+    <h1>Health Benefits of Rising Desks</h1>
+    
+    <section class="health-benefits">
+      <h3>Improves Posture</h3>
+      <div class="benefit-card">
+        <div class="benefit-image">
+          <img src="images/posture.jpg" alt="Improves Posture">
+        </div>
+        <div class="benefit-content">
+          <p>Standing desks encourage better spine alignment, reducing strain on your neck and back. They help create a healthier work environment and prevent posture-related health issues.</p>
+        </div>
+      </div>
+      
+      <h3>Heart Health</h3>
+      <div class="benefit-card">
+        <div class="benefit-content">
+          <p>Standing more often can decrease the risk of cardiovascular diseases. Studies suggest that prolonged sitting negatively affects heart health, and standing desks can mitigate this impact.</p>
+        </div>
+        <div class="benefit-image">
+          <img src="images/heart.jpg" alt="Heart Health">
+        </div>
+      </div>
+
+      <h3>Burn Calories</h3>
+      <div class="benefit-card">
+
+        <div class="benefit-image">
+          <img src="images/burn-calories.jpg" alt="Burn Calories">
+        </div>
+        <div class="benefit-content">
+          <p>Using a standing desk helps you burn more calories compared to sitting. It encourages micro-movements throughout the day, aiding in maintaining a healthy weight.</p>
+        </div>
+      </div>
+
+      <h3>Boosts Focus</h3>
+      <div class="benefit-card">
+        <div class="benefit-content">
+          <p>Standing desks enhance your concentration and productivity. By allowing better blood flow, they keep you more alert and engaged throughout the day.</p>
+        </div>
+        <div class="benefit-image">
+          <img src="images/desk-health1.jpg" alt="Boosts Focus">
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2024 Standing Desks Ltd | All Rights Reserved</p>
+      <p>
+        <a href="terms.html">Terms of Service</a> | 
+        <a href="privacy.html">Privacy Policy</a> | 
+        <a href="contact.html">Contact Us</a>
+      </p>
+    </footer>
   </main>
 </body>
 </html>
